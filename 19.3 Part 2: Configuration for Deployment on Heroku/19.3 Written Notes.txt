@@ -1,0 +1,65 @@
+-> Part 2: Configuration for Deployment on Heroku
+	-> Focuses on configuring your Flask app for deployment on Heroku
+	-> Involves managing environment variables, setting up security features, and configuring the database
+	-> This lesson builds on Part 1 and sets the stage for Part 3
+	-> Important tasks include setting SECRET_KEY, FLASK_CONFIG, and PostgreSQL configurations for production
+
+-> Prepare for Deployment on Heroku
+	-> Config vars need to be set on Heroku for proper app deployment
+	-> SECRET_KEY must be defined using a long random string for security
+	-> FLASK_CONFIG is used to manage different configurations for different environments
+	-> The default value is set in case the variable is not found in config vars, but should never be used in production
+
+-> Production Configuration
+	-> ProductionConfig class is used to define production settings
+	-> Example config includes SQLAlchemy DATABASE_URI, which connects to a PostgreSQL database
+	-> Utilises logging to capture errors and send notifications via email using SMTPHandler
+	-> Database URL can be set using environment variables or default to SQLite for local testing
+
+-> Heroku Specific Configuration
+	-> Heroku requires custom configurations that are tailored to its platform
+	-> Heroku logs more than just errors, so additional logging for info and warning messages is captured
+	-> The HerokuConfig class inherits from ProductionConfig, adding Heroku-specific adjustments like logging to stderr
+	-> Includes setting DATABASE_URL for PostgreSQL as Heroku doesn’t support SQLite
+
+-> Connect Flask to Heroku with a Procfile
+	-> A Procfile is required for Heroku to know how to run your app
+	-> The Procfile specifies the process type (e.g., web) and the entry point (e.g., using Gunicorn)
+	-> Gunicorn is the recommended production web server for Flask apps on Heroku
+	-> The Procfile does not have an extension, and should be named exactly 'Procfile'
+
+-> Installing Gunicorn
+	-> Gunicorn is a Python WSGI HTTP server required for handling communication between Flask and the web
+	-> Install Gunicorn via pip to integrate it with Flask for deployment
+
+-> Security
+	-> Security is critical when deploying Flask apps to production
+	-> Adding TLS (Transport Layer Security) with Flask-Talisman ensures that data is encrypted between client and server
+	-> HTTPS is required for production, and Flask-Talisman helps to enforce this
+	-> Additional content security policies can be set to prevent loading unsafe resources
+
+-> Adding Encryption To Requests
+	-> HTTP is not secure enough for production apps, and HTTPS is recommended
+	-> Flask-Talisman is used to enforce HTTPS and protect against common web security threats
+	-> By default, Flask-Talisman restricts scripts and styles from outside the app, but this can be adjusted to allow resources like Bootstrap
+
+-> Cross-Site Request Forgery (CSRF) Protection
+	-> CSRF protection is crucial for preventing malicious requests from other sites
+	-> Flask-WTF’s CSRFProtect extension can be used to add protection globally across the app
+	-> CSRF protection is added to the app’s forms and non-form endpoints
+	-> Werkzeug’s ProxyFix middleware is used to fix issues caused by Heroku’s reverse proxy server
+
+-> Deployment Tasks
+	-> Deployment tasks such as database migrations and role creation are automated with Flask CLI commands
+	-> A custom `deploy` command is defined to migrate the database and insert necessary roles
+	-> These tasks ensure the app is correctly set up after deployment and reduce human error
+
+-> Top-Level File
+	-> A top-level `requirements.txt` file must be created for Heroku to track dependencies
+	-> For Heroku deployment, dependencies specific to the platform, like Gunicorn and Flask-Talisman, should be included
+	-> The `requirements.txt` file includes all the necessary libraries for Heroku to install during deployment
+
+-> Summary: Configuration for Flask Deployment on Heroku
+	-> This lesson covered environment variables, app security, and configuring a production environment for Flask on Heroku
+	-> Emphasised the importance of setting up Flask-Talisman for HTTPS, CSRF protection, and proper database configuration
+	-> Demonstrated how to create a `Procfile` for Heroku and configure dependencies with a `requirements.txt` file

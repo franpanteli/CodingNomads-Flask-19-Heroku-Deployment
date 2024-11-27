@@ -1,0 +1,66 @@
+-> Part 1: Setup for Flask Deployment on Heroku
+	-> Introduction to deploying Flask apps on Heroku
+	-> Heroku simplifies deployment with a user-friendly platform
+	-> Heroku is a Platform as a Service (PaaS) introduced in 2007
+	-> Provides Eco and Basic Tiers suitable for personal projects
+	-> Ideal for launching projects to a wider audience
+	-> Heroku's PaaS handles deployment tasks for you
+
+-> Getting Started with Heroku
+	-> Create a free account on Heroku
+	-> Install Heroku CLI (Command Line Interface)
+	-> Create your app on Heroku using the CLI
+
+-> Installing Heroku CLI
+	-> On macOS: use `brew install heroku/brew/heroku`
+	-> On Ubuntu: use `sudo snap install --classic heroku`
+	-> Log in to Heroku CLI via terminal and browser
+	-> Optionally connect your GitHub repository to Heroku
+
+-> Manage Secrets in Heroku
+	-> Secrets like the SECRET_KEY must remain private
+	-> Avoid pushing sensitive data like passwords or API keys to GitHub
+	-> If secrets are exposed, immediately rotate them to maintain security
+
+-> Local Solutions for Managing Secrets
+	-> Store secrets in a separate Python file (e.g., `secrets.py`)
+	-> Use `.gitignore` to exclude sensitive files from version control
+	-> Use environment variables stored in virtual environments
+	-> Use the `dotenv` package to manage variables securely
+
+-> Setting Config Vars Through Heroku CLI
+	-> Set environment variables using `heroku config:set` command
+	-> Example: `heroku config:set SECRET_KEY=<YOUR_SECRET_KEY>`
+	-> Use `heroku config` to view current environment variables
+	-> Ensure secret keys are long and hard to crack
+
+-> Using UUID for Secret Keys
+	-> Generate random keys using Python’s `uuid` module
+	-> Example: `python -c "import uuid; print(uuid.uuid4().hex)"`
+
+-> Setting Config Vars Through Heroku Dashboard
+	-> Access the Heroku Dashboard and go to the "Settings" tab
+	-> Use the "Reveal Config Vars" button to manage environment variables
+	-> Add variables like SECRET_KEY, FLASK_APP, FLASK_DEBUG, and others
+
+-> Recommended Environment Variables
+	-> Set `FLASK_APP` to your main app file (e.g., `ragtime.py`)
+	-> Set `FLASK_DEBUG` to `0` to disable debugging in production
+	-> Set `FLASK_CONFIG` to `heroku`
+	-> Set email credentials (`MAIL_USERNAME` and `MAIL_PASSWORD`)
+
+-> Why Use the Heroku Dashboard?
+	-> The Heroku Dashboard provides a convenient web interface for managing deployed apps
+	-> Allows setting and monitoring environment variables
+	-> Offers a pre-defined method to interact with your app
+
+-> Secrets Saved!
+	-> Setting config vars properly is crucial to a successful deployment
+	-> Use Heroku CLI or Dashboard to ensure secrets are securely handled
+	-> Part 2 of the tutorial will cover further steps to avoid app breakage
+
+-> Summary of Part 1: Setup for Flask Deployment on Heroku
+	-> Learned about Heroku as a PaaS for simplifying Flask app deployment
+	-> Installed Heroku CLI and logged in via terminal
+	-> Created a Heroku app and learned to manage secrets securely
+	-> Part 2 will dive deeper into configuration for deployment

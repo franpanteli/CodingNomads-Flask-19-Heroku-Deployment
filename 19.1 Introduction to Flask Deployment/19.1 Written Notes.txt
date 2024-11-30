@@ -18,7 +18,7 @@
     -> Web server software is necessary for handling and responding to client requests
 
 -> Web Server vs. Web Framework
-    -> A web server listens for connections and serves static content or forwards requests to other programs
+    -> A web server listens for connections and serves static content or forwards requests to other programmes
     -> A web framework (e.g., Flask) provides tools to handle logic, routing, and database interaction
 
 -> Web Server Examples

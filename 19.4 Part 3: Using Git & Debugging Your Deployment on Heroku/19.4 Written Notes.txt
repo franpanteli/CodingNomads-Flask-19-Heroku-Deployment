@@ -1,67 +1,67 @@
 -> Welcome to Part 3 of the Flask Deployment tutorial series
-	-> In this part, you will learn how to use Git for deployment on Heroku
-	-> You will also learn how to create a Heroku app and debug your deployment
+    -> In this part, you will learn how to use Git for deployment on Heroku
+    -> You will also learn how to create a Heroku app and debug your deployment
 
 -> Integrating Heroku with Git
-	-> Heroku has a seamless integration with Git, making deployment easy
-	-> Four steps are involved in deploying your app with Git
-		-> Put your project code under version control with Git
-		-> Create a Heroku app
-		-> Add a remote to your repository
-		-> Push your code to the remote
+    -> Heroku has a seamless integration with Git, making deployment easy
+    -> Four steps are involved in deploying your app with Git
+        -> Put your project code under version control with Git
+        -> Create a Heroku app
+        -> Add a remote to your repository
+        -> Push your code to the remote
 
 -> Git Version Control
-	-> If you haven't already, put your project under version control with Git
-	-> To do this, go to the root folder of your project in the terminal
-		-> Run `git init` to initialise a new Git repository
-		-> Add and commit everything, except files containing sensitive information
-	-> Your project is now under version control
+    -> If you haven't already, put your project under version control with Git
+    -> To do this, go to the root folder of your project in the terminal
+        -> Run `git init` to initialise a new Git repository
+        -> Add and commit everything, except files containing sensitive information
+    -> Your project is now under version control
 
 -> Create A Heroku App
-	-> You can create a Heroku app through the Heroku Dashboard or via the Heroku CLI
-	-> The name you give your app will be part of the URL
-		-> Choose a name that is easy to remember, and ensure it's available
-	-> If you created your app through the Heroku CLI, it automatically sets the remote for you
+    -> You can create a Heroku app through the Heroku Dashboard or via the Heroku CLI
+    -> The name you give your app will be part of the URL
+        -> Choose a name that is easy to remember, and ensure it's available
+    -> If you created your app through the Heroku CLI, it automatically sets the remote for you
 
 -> Add The Remote
-	-> If the app was created through the CLI, this step is already done
-	-> To check if the remote is set up, run `git remote -v`
-		-> The remote should be listed as `heroku` with the appropriate URL
+    -> If the app was created through the CLI, this step is already done
+    -> To check if the remote is set up, run `git remote -v`
+        -> The remote should be listed as `heroku` with the appropriate URL
 
 -> Push Your Code
-	-> Push your code to Heroku using the command `git push heroku master`
-		-> This deploys your app to Heroku under the specified URL
+    -> Push your code to Heroku using the command `git push heroku master`
+        -> This deploys your app to Heroku under the specified URL
 
 -> Run Deploy Tasks
-	-> After pushing the code, initiate deployment tasks that were previously created
-	-> To restart the app and ensure a clean start, run the command `heroku restart`
-	-> Once deployment finishes, the Heroku CLI will show the URL of your deployed app
-	-> Your app is now live and accessible to anyone on the internet
+    -> After pushing the code, initiate deployment tasks that were previously created
+    -> To restart the app and ensure a clean start, run the command `heroku restart`
+    -> Once deployment finishes, the Heroku CLI will show the URL of your deployed app
+    -> Your app is now live and accessible to anyone on the internet
 
 -> Debugging Deployment
-	-> If your app isn't working as expected, you can troubleshoot using these methods
+    -> If your app isn't working as expected, you can troubleshoot using these methods
 
 -> Check the logs
-	-> Use `heroku logs` to view your app's log messages from the terminal
-		-> Optionally, use `-t` to continually receive incoming messages
+    -> Use `heroku logs` to view your app's log messages from the terminal
+        -> Optionally, use `-t` to continually receive incoming messages
 
 -> Try running locally
-	-> Heroku CLI allows you to "dry run" your deployment locally using the `heroku local` command
-	-> Set up environment variables manually, as Heroku won't grab them for you
-		-> Do not commit this file to version control
-		-> Add `.env` to your `.gitignore` file
+    -> Heroku CLI allows you to "dry run" your deployment locally using the `heroku local` command
+    -> Set up environment variables manually, as Heroku won't grab them for you
+        -> Do not commit this file to version control
+        -> Add `.env` to your `.gitignore` file
 
 -> Check (un)committed files
-	-> Make sure all necessary files are committed to your Git repository
-		-> Check for any files you might have forgotten to commit or push
+    -> Make sure all necessary files are committed to your Git repository
+        -> Check for any files you might have forgotten to commit or push
 
 -> Summary: Flask Deployment on Heroku
-	-> In this series, you have:
-		-> Gotten familiar with Heroku and the Heroku CLI
-		-> Managed environment variables on Heroku
-		-> Set up TLS and CSRF protection for security
-		-> Completed deployment tasks using Flask CLI commands
-		-> Written a `Procfile` to declare how Heroku should run your app
-		-> Created a `requirements.txt` for dependency tracking
-		-> Deployed your app using Git by setting up a remote and pushing your code
-		-> Explored debugging methods like checking logs and testing locally
+    -> In this series, you have:
+        -> Gotten familiar with Heroku and the Heroku CLI
+        -> Managed environment variables on Heroku
+        -> Set up TLS and CSRF protection for security
+        -> Completed deployment tasks using Flask CLI commands
+        -> Written a `Procfile` to declare how Heroku should run your app
+        -> Created a `requirements.txt` for dependency tracking
+        -> Deployed your app using Git by setting up a remote and pushing your code
+        -> Explored debugging methods like checking logs and testing locally

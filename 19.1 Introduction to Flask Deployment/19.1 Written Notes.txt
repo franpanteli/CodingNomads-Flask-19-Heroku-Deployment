@@ -1,60 +1,60 @@
--> Introduction to Flask Deployment
-    -> Learn how to deploy your Flask webapp on the internet
-    -> Deployment can be challenging but becomes easier with practice
-    -> Covers two deployment options and deployment strategies
+-> introduction to flask deployment  
+    -> learn how to deploy your flask webapp on the internet  
+    -> deployment can be challenging but becomes easier with practice  
+    -> covers two deployment options and deployment strategies  
 
--> What is a Server?
-    -> A server is a computer or software system that provides services or data to other computers over a network
-    -> Servers host websites, manage databases, enable file sharing, and provide email services
-    -> They handle multiple client requests simultaneously to ensure smooth operations
+-> what is a server?  
+    -> a server is a computer or software system that provides services or data to other computers over a network  
+    -> servers host websites, manage databases, enable file sharing, and provide email services  
+    -> they handle multiple client requests simultaneously to ensure smooth operations  
 
--> Server Hardware
-    -> Refers to the physical computer connected to a network, often in large server farms
-    -> Industrial servers are more powerful than consumer-grade hardware
-    -> A server must always be on to ensure users can access your app at any time
+-> server hardware  
+    -> refers to the physical computer connected to a network, often in large server farms  
+    -> industrial servers are more powerful than consumer-grade hardware  
+    -> a server must always be on to ensure users can access your app at any time  
 
--> Server Software
-    -> Refers to software designed to handle web requests (usually HTTP requests)
-    -> Web server software is necessary for handling and responding to client requests
+-> server software  
+    -> refers to software designed to handle web requests (usually http requests)  
+    -> web server software is necessary for handling and responding to client requests  
 
--> Web Server vs. Web Framework
-    -> A web server listens for connections and serves static content or forwards requests to other programmes
-    -> A web framework (e.g., Flask) provides tools to handle logic, routing, and database interaction
+-> web server vs. web framework  
+    -> a web server listens for connections and serves static content or forwards requests to other programmes  
+    -> a web framework (e.g., flask) provides tools to handle logic, routing, and database interaction  
 
--> Web Server Examples
-    -> Apache, Nginx, and Gunicorn are common web servers
-    -> Nginx and Gunicorn are often used with Flask apps for deployment
+-> web server examples  
+    -> apache, nginx, and gunicorn are common web servers  
+    -> nginx and gunicorn are often used with flask apps for deployment  
 
--> What is WSGI?
-    -> WSGI (Web Server Gateway Interface) is a protocol for communication between Python web apps and web servers
-    -> It defines how a Python app interacts with servers like Nginx, Apache, or Gunicorn
-    -> Flask apps use WSGI to communicate with production servers
+-> what is wsgi?  
+    -> wsgi (web server gateway interface) is a protocol for communication between python web apps and web servers  
+    -> it defines how a python app interacts with servers like nginx, apache, or gunicorn  
+    -> flask apps use wsgi to communicate with production servers  
 
--> Python Flask Production Server
-    -> Flask’s development server is not suitable for production due to performance, stability, and security concerns
-    -> A production server such as Gunicorn or uWSGI is required to handle traffic and security risks
+-> python flask production server  
+    -> flask’s development server is not suitable for production due to performance, stability, and security concerns  
+    -> a production server such as gunicorn or uwsgi is required to handle traffic and security risks  
 
--> PaaS vs IaaS
-    -> PaaS (Platform-as-a-Service) simplifies deployment by managing hardware, OS, web servers, and databases
-    -> IaaS (Infrastructure-as-a-Service) provides more control but requires you to manage the servers and infrastructure
-    -> In this course, PaaS will be used to simplify the deployment process
+-> paas vs iaas  
+    -> paas (platform-as-a-service) simplifies deployment by managing hardware, os, web servers, and databases  
+    -> iaas (infrastructure-as-a-service) provides more control but requires you to manage the servers and infrastructure  
+    -> in this course, paas will be used to simplify the deployment process  
 
--> PaaS Deployment
-    -> Heroku is an example of a PaaS that simplifies deployment by handling most server management
-    -> With PaaS, you only need to focus on your app and data, while the provider manages other infrastructure tasks
-    -> Heroku offers a free hobby tier for small projects
+-> paas deployment  
+    -> heroku is an example of a paas that simplifies deployment by handling most server management  
+    -> with paas, you only need to focus on your app and data, while the provider manages other infrastructure tasks  
+    -> heroku offers a free hobby tier for small projects  
 
--> Python Flask Production Environment
-    -> Deployment requires certain adjustments to make your app production-ready
-    -> Common tasks include setting up a production web server, collecting static files, and switching to a production database
+-> python flask production environment  
+    -> deployment requires certain adjustments to make your app production-ready  
+    -> common tasks include setting up a production web server, collecting static files, and switching to a production database  
 
--> Flask Production Settings
-    -> Important settings to update before deploying a Flask app to production:
-        -> SECRET_KEY: Used for cryptographic signing and should be unique and unpredictable
-        -> FLASK_DEBUG: Disable debug mode in production for security reasons
-        -> FLASK_CONFIG: Switch to a production configuration
-        -> SQLALCHEMY_DATABASE_URI: Change to a more robust database for production
+-> flask production settings  
+    -> important settings to update before deploying a flask app to production:  
+        -> secret_key: used for cryptographic signing and should be unique and unpredictable  
+        -> flask_debug: disable debug mode in production for security reasons  
+        -> flask_config: switch to a production configuration  
+        -> sqlalchemy_database_uri: change to a more robust database for production  
 
--> Conclusion
-    -> Once you prepare your app with the necessary adjustments, you can deploy it using platforms like Heroku
-    -> Heroku handles many of the steps for you, making deployment simpler and quicker
+-> conclusion  
+    -> once you prepare your app with the necessary adjustments, you can deploy it using platforms like heroku  
+    -> heroku handles many of the steps for you, making deployment simpler and quicker  
